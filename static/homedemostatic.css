@@ -1,10 +1,10 @@
 body,html{
   margin: 0;
   padding: 0;
-   /* background-image: url('homepagebackground.jpg');  */
+   background-image: url('homepagebackground.jpg'); 
    
 
-  background-color:orange
+  background-color:grey
  }
  nav{
    height: 70px;

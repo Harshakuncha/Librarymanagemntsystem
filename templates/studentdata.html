@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %} studentdata_page {% endblock %}
+{% block content %}
+
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    
+    <table border="10" align="center" margintop="50px" width="500" bgcolor="#CCCCCC">
+      <caption>Student registration</caption>
+      <tr>
+        <th>  
+        {{ form.studentid.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.studentid(class="form-control-label") }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.studentname.label(class="form-control-label") }}</th><td>
+        {{ form.studentname(class="form-control-label") }}</td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.email.label(class="form-control-label") }}</th>
+        <td>
+        {{ form.email(class="form-control-label") }}</td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.contact.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.contact(class="form-control-label") }}</td>
+      </tr>
+   </table>
+    <center>
+         {{form.submit(class='btn btn-outline-info')}}
+    </center>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">STUDENT ID</th>
+          <th scope="col">STUDENT NAME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">CONTACT</th>
+         
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for x in allusers %}
+        <tr>
+          <th scope="row">{{x.id}}</th>
+          <td>{{x.studentid}}</td>
+          <td>{{x.studentname}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.contact}}</td>
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    
+  </form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Transaction page{% endblock %}
+{% block content %}
+
+<form method="POST" action="">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+       
+        
+        <th scope="col">BOOK_ID</th>
+        <th scope="col">BOOK_NAME</th>
+        <th scope="col">STUDENT_NAME</th>
+        <th scope="col">AVAILABLE_COPIES</th>
+        <th scope="col">ISSUED_COPIES</th>
+        <th scope="col">TYPE</th>
+        <th scope="col">DATE/TIME</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for x in is1 %}
+    <tr>
+      <th scope="row">{{x.id}}</th>
+      <td>{{x.issuedto.bookid}}</td>
+      <td>{{x.bookname}}</td>
+      <td>{{x.studentname}}</td>
+      <td>{{x.issuedto.copies}}</td>
+      <td>{{x.issuedcopies}}</td>
+      <td>{{x.type}}</td>
+      <td>{{x.date_created}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+
+{% endblock %}

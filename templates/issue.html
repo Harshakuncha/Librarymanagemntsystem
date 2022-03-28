@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %} Search page{% endblock %}
+{% block content %}
+
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">ISSUE</legend>
+      <div class="form-group">
+        {{ form.bookid.label(class="form-control-label") }}
+        {% if form.bookid.errors %}
+        {{ form.bookid(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.bookid.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.bookid(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.studentid.label(class="form-control-label") }}
+        {% if form.studentid.errors %}
+            {{ form.studentid(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.studentid.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.studentid(class="form-control form-control-lg") }}
+        {% endif %}
+    </div>
+    <div class="form-group">
+      {{ form.copies.label(class="form-control-label") }}
+      {% if form.copies.errors %}
+          {{ form.copies(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+              {% for error in form.copies.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+      {% else %}
+          {{ form.copies(class="form-control form-control-lg") }}
+      {% endif %}
+  </div>
+      </fieldset>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+
+      {% endblock %}

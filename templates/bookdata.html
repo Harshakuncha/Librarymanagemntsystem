@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %} studentdata_page {% endblock %}
+{% block content %}
+
+
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+      <center>
+        <h3>BOOK REGISTRATION</h3>
+      </center>
+      <table border="10" align="center" width="500" bgcolor="#CCCCCC">
+      <tr>
+        <th>
+        {{ form.bookid.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.bookid(class="form-control-label") }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.bookname.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.bookname(class="form-control-label") }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.author.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.author(class="form-control-label") }}
+        <td>
+        
+      </tr>
+
+      <tr>
+        <th>
+        {{ form.publisher.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.publisher(class="form-control-label") }}
+        </td>
+      </tr>
+      <tr>
+        <th>
+        {{ form.copies.label(class="form-control-label") }}
+        </th>
+        <td>
+        {{ form.copies(class="form-control-label") }}
+        </td>
+      </tr>
+      </table>
+    <center>
+      
+        {{form.submit(class='btn btn-outline-info')}}
+    </center>
+     
+     <br>
+     <br><br><br>
+     
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">BOOK_ID</th>
+            <th scope="col">BOOK_NAME</th>
+            <th scope="col">AUTHOR</th>
+            <th scope="col">PUBLISHER</th>
+            <th scope="col">AVAILABLE_COPIES</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for x in allbooks %}
+          <tr>
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.bookid}}</td>
+            <td>{{x.bookname}}</td>
+            <td>{{x.author}}</td>
+            <td>{{x.publisher}}</td>
+            <td>{{x.copies}}</td>
+          </tr>
+          {% endfor %}
+         </tbody>
+      </table>
+  </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Student details{% endblock %}
+{% block content %}
+<form method="POST" action="">
+   <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">STUDENT_ID</th>
+          <th scope="col">STUDENT_NAME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">CONTACT</th>
+          <!-- <th scope="col">BOOKS_DETAILS</th> -->
+        </tr>
+      </thead>
+      <tbody>
+      {% for x in allusers %}
+      <tr>
+         <th scope="row">{{x.id}}</th>
+         <td>{{x.studentid}}</td>
+         <td>{{x.studentname}}</td>
+         <td>{{x.email}}</td>
+         <td>{{x.contact}}</td>
+         <!-- {% for y in x.books %}
+            {% if y.issuedcopies %}
+             <td>{{y.bookid}}</td>
+             <td>{{ y.bookname }}</td>
+            {% endif %}
+         {% endfor %} -->
+      </tr>
+      {% endfor %}
+
+      </tbody>
+   <!-- </table>
+   <br>
+   <br>
+   <br>
+   <h4>LIST</h4>
+   <table class="table table-striped">
+     <thead>
+       <th scope="col">STUDENT_NAME</th>
+       <th scope="col">BOOKS_LIST</th>
+
+     </thead>
+     <tbody>
+   {% for y in d %}
+   <tr>
+     <td>
+      {{y}} </td>
+      <td>{{d[y]}}</td>
+      <br>
+   </tr>
+   {% endfor %}
+     </tbody>
+   </table> -->
+
+</form>
+{% endblock %}
+   
+    
+       
+
+   

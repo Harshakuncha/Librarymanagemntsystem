@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}List page{% endblock %}
+{% block content %}
+
+<form method="POST" action="">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">STUDENT_ID</th>
+        <th scope="col">STUDENT_NAME</th>
+        <th scope="col">BOOK_ID></th>
+        <th scope="col">BOOK_NAME</th>
+        <th scope="col">ISSUED_COPIES</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for x in is1 %}
+      <tr>
+        <td>{{x.issuedto.owner.studentid}}</td>
+        <td>{{x.issuedto.owner.studentname}}</td>
+        <td>{{x.issuedto.bookid}}</td>
+        <td>{{x.issuedto.bookname}}</td>
+        <td>{{x.issuedcopies}}</td>
+      </tr>
+      {% endfor %}
+    
+
+
+
+    </tbody>
+  </table>
+</form>
+{% endblock %}

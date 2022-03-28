@@ -1,0 +1,40 @@
+body,html{
+  margin: 0;
+  padding: 0;
+  background-image: url('library.jpg');
+  background-color:grey
+ }
+ nav{
+  height: 70px;
+  width: 100%;
+  background-color:grey
+}
+nav.logo{
+  
+  color: red;
+  font-weight: bold;
+  padding-left: 50px;
+  height: 70px;
+}
+
+nav ul{
+  padding: 0;
+  margin: 0;
+  float: right;
+  margin-right: 30px;
+  
+}
+nav ul li {
+  background:grey;
+  position: relative;
+  list-style: none;
+  display: inline-block;
+}
+nav ul li a{
+  display: block;
+  padding: 0 15px;
+  color: white;
+  text-decoration: none;
+  line-height: 60px;
+  font-size: 20px;
+}

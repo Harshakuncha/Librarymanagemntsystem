@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addbook</title>
+  <style>
+    .bttn{
+      align-items: center;
+      margin-left: 600px;
+      margin-top: 30px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+<form class="grid" method="" action="/result" method="POST">
+  <table border="10" align="center" width="500" bgcolor="#CCCCCC">
+    <!-- <center>
+      {% if name %}
+      <h1>Succesfully registered {{name}}</h1>
+      {% endif %}
+    </center> -->
+    <div class="mainblock">
+    <caption>Add Book</caption>
+    
+      <th>Enter Book ID</th>
+      <td><input type="text " name="bid" id="bid" title="enter book id"
+          placeholder="enter Book id" required /></td>
+    </tr>
+    <tr>
+      <th>Enter Book name</th>
+      <td><input type="text" name="name" id="name" title="enter book name"
+          placeholder="enter book name" required /></td>
+    </tr>
+    <tr>
+      <th>Enter author</th>
+      <td><input type="text" name="author" id="author" placeholder="enter author name" /></td>
+    </tr>
+    <tr>
+      <th>Enter publisher</th>
+      <td><input type=text name="publisher" id="publisher" placeholder="enter publisher name"/></td>
+    </tr>
+    <tr>
+      <th>Enter copies</th>
+      <td><input type="number" name="copies" id="copies" placeholder="enter copies"/></td>
+    </tr>
+    </table>
+    <form method='post' action="{{url_for('home')}}">
+      <input type="submit" class="bttn" value="submit">
+    </form>
+    
+    <center>
+      <a href="/home">
+        <input type="submit" name="submit" class="bttn" value="Back">
+      </a>
+    </center>
+    </div>
+    <!-- <div class="container">
+      {% for x in allbooks %}
+      {{x.bookid}}-{{x.bookname}}-{{x.author}}-{{x.publisher}}-{{x.copies}}<br>
+      {% endfor %}
+    </div> -->
+  
+</body>
+</html>

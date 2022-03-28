@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}List page{% endblock %}
+{% block content %}
+<form method="POST" action="">
+  <table class="table table-striped">
+     <thead>
+       <tr>
+         <th scope="col">ID</th>
+         <th scope="col">BOOK_ID</th>
+         <th scope="col">USER_ID</th>
+         <th scope="col">STUDENT_ID</th>
+         <th scope="col">STUDENT_NAME</th>
+         <th scope="col">BOOKID</th>
+         <th scope="col">BOOK_NAME</th>
+         <th scope="col">PRESENT_COPIES_HELD</th>
+       </tr>
+     </thead>
+     <tbody>
+          {% for x in stob %}
+          <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.book_id}}</td>
+            <td>{{x.user_id}}</td>
+            <td>{{x.studentid}}</td>
+            <td>{{x.studentname}}</td>
+            <td>{{x.bookid}}</td>
+            <td>{{x.studentbook.bookname}}</td>
+            <td>{{x.count_ids}}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+      </table>
+      <br>
+      <br>
+      <h3>LIST</h3>
+      <table class="table table-striped">
+        <thead>
+          <th scope="col">STUDENT_NAME</th>
+          <th scope="col">BOOKS_LIST</th>
+
+        </thead>
+        <tbody>
+      {% for y in d %}
+      <tr>
+        <td>
+         {{y}} </td>
+         <td>{{d[y]}}</td>
+         <br>
+      </tr>
+      {% endfor %}
+        </tbody>
+      </table>
+    </form>
+    {% endblock %}
